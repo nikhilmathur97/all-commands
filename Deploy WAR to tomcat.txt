@@ -1,0 +1,40 @@
+cat /etc/-s-release
+git clone https://github.com/coolgourav147/spring-boot-war-example
+ls
+result-spring.....
+cd spring...
+ls
+mvn --help
+sudo apt-get unstall maven
+mvn --help
+ls
+mvn test
+mvn install
+ls
+cd target/ 
+ls (shows you war file)
+cd ..
+cp target/hello-world....war /tmp/
+sudo apt-get install tomcat9
+ifconfig
+cd /var/lib/tomcat9
+ls
+cd webapps
+sudo -i or sudo su
+ls
+cp /tmp/hello-world-0.0.1-SNAPSHOT.war ./app.war
+ls
+cd app
+ls
+cd ..
+rm -rvf app.war
+sudo apt-get install tomcat9-admin
+cd /etc/tomcat9/
+ls
+vi tomcat-users.xml
+<role rolename="manager-gui"/>
+<user username="admin" password="admin" roles="manager-gui"/>
+</tomcat-users>
+service tomcat9 restart
+service tomcat status
+ifconfig

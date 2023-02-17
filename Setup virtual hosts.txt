@@ -1,0 +1,38 @@
+systemctl status apache2
+cd /var/www/
+sudo mkdir -p /var/www/example.com/
+sudo chown -R www-data:www-data /var/www/example.com
+sudo vi /var/www/example.com/index.html
+sudo vi /etc/apache2/sites-available/example.com.conf
+
+<VirtualHost *:80>
+
+ServerAdmin admin@example.com
+
+ServerName example.com
+
+ServerAlias www.example.com
+
+DocumentRoot /var/www/example.com
+
+ErrorLog ${APACHE_LOG_DIR}/error.log
+
+CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+</VirtualHost>
+
+sudo a2ensite example.com.conf
+sudo a2dissite 000-default.conf
+sudo apache2ctl configtest
+sudo systemctl reload apache2
+#sudo systemctl restart apache2
+
+# create ssl certificate
+sudo certbot --apache -d www.mitwatv.in
+
+
+
+devopstesting.vdoapi.com
+
+scp -i ./phpproject.pem -r ./testing/* ubuntu@34.224.151.184:/var/www/html  (copy directory from local to aws server)
+

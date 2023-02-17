@@ -1,0 +1,4 @@
+crontab -l
+
+* * * * * cd /home/paul/script && ./create_file.sh
+
